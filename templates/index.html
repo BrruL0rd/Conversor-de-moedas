@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+        <form method="POST">
+            <label>Valor:</label>
+            <input type="number" step="0.01" name="valor" required>
+
+            <label>Moeda:</label>
+            <select name="moeda">
+                <option value="USD">Dólar</option>
+                <option value="EUR">Euro</option>
+            </select>
+
+            <button type="submit">Converter</button>
+        </form>
+
+        {% if resultado is not none %}
+            <p>Resultado: R$ {{ resultado }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
